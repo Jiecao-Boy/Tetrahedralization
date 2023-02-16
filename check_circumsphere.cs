@@ -26,8 +26,14 @@ public class check_circumsphere : MonoBehaviour
 
         float stp = Vector3.Dot(a, Vector3.Cross(b,c));
         Vector3 center = (Vector3.Dot(a,a) * Vector3.Cross(b,c) + Vector3.Dot(b,b)* Vector3.Cross(c,a) + Vector3.Dot(c,c)*Vector3.Cross(a,b)) / (2*stp);
+        Debug.Log(center);
         //Calculate the position vector of the point
     }
+
+    void Start(){
+        in_or_out();
+    }
+
     
 /***
      # Define the position vectors of the vertices of the tetrahedron
