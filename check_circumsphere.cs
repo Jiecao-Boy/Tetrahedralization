@@ -24,10 +24,21 @@ public class check_circumsphere : MonoBehaviour
         Vector3 d = new Vector3(x4,y4,z4);        
         Vector3 test = new Vector3(test_x, test_y,test_z); 
 
-        float stp = Vector3.Dot(a, Vector3.Cross(b,c));
-        Vector3 center = (Vector3.Dot(a,a) * Vector3.Cross(b,c) + Vector3.Dot(b,b)* Vector3.Cross(c,a) + Vector3.Dot(c,c)*Vector3.Cross(a,b)) / (2*stp);
+        //Calculate the position vector of the center of circumsphere       
+        //I don't have any knowledge on finding the center of a cirumspehre of tetrahedron
+        //I follow the information on this website: 
+        // https://math.stackexchange.com/questions/1517047/prove-that-the-center-of-the-sphere-circumscribing-the-tetrahedron-is-given-by-p#:~:text=If%20O%20A%20B%20C%20is%20a%20tetrahedron,2%20%5B%20a%20%E2%86%92%20b%20%E2%86%92%20c%20%E2%86%92%5D
+        Vector3 A = a-d; 
+        Vector3 B = b-d;
+        Vector3 C = c-d;
+        Vector3 test1 = Vector3.Cross(B,C);
+        float stp = Vector3.Dot(A, Vector3.Cross(B,C));
+        Vector3 center = (Vector3.Dot(A,A) * Vector3.Cross(B,C) + Vector3.Dot(B,B)* Vector3.Cross(C,A) + Vector3.Dot(C,C)*Vector3.Cross(A,B)) / (2*stp);
+        //Donn't forget to transfer the center vector back to the universal frame!
+        center = center + d;
         Debug.Log(center);
-        //Calculate the position vector of the point
+
+
     }
 
     void Start(){
