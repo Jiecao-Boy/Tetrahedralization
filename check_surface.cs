@@ -34,6 +34,8 @@ public class check_surface: MonoBehaviour
             float enter = 0.0f; 
             if (plane.Raycast(ray,out enter)){
                 //now we want to check if the intersection point lies on the triangle
+                //reference comes from here:
+                //https://forum.unity.com/threads/check-if-the-point-lies-inside-the-triangle.181524/
                 Vector3 p_inter = ray.GetPoint(enter);
                 Vector3 d=vertices[b]-vertices[a];
                 Vector3 e=vertices[c]-vertices[a];
