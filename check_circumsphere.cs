@@ -10,13 +10,14 @@ using static check_surface;
 //[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class check_circumsphere : MonoBehaviour
 {
+    /**
 	public float x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4;
     public float test_x, test_y, test_z;
     public check_surface c; 
     //Different from creating vertex, this program takes in one more vertex (test)
     // the goal is to check if the vertex lies in the tetrahedral formed by the other four vertices. 
-
-    public void in_or_out(){
+**/
+    public void in_or_out(float x1, float y1,float z1,float x2,float y2,float z2,float x3,float y3,float z3,float x4,float y4,float z4,float test_x,float test_y,float test_z){
         //First regenterate the five points we have 
         Vector3 a = new Vector3(x1,y1,z1);
         Vector3 b = new Vector3(x2,y2,z2);
@@ -51,7 +52,7 @@ public class check_circumsphere : MonoBehaviour
             Debug.Log("out");
         }
     }
-
+    /**
     void Start(){
         in_or_out();
         //check_surface c = new check_surface();
@@ -59,7 +60,7 @@ public class check_circumsphere : MonoBehaviour
         c=gameobject.AddComponent<check_surface>(); 
         c.in_surface();
     }
-
+**/
 
 
 }

@@ -105,7 +105,7 @@ public class create_tetrahedron : MonoBehaviour
         }
 
         mesh.triangles = triangles;
-        //first have to determine the number of triangles\
+        //first have to determine the number of triangles
         //here we make an assumple that one face only features one triangle
 
     }
