@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using static check_circumsphere;
 using static check_surface; 
+using static grand_tetrahedron;
 public class main : MonoBehaviour
 {
 	public float x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4;
     public float test_x, test_y, test_z;
     public check_surface c; 
     public check_circumsphere s; 
+    public grand_tetrahedron p; 
     public int[] triangles;  
     public Vector3[] vertices; 
 
@@ -45,7 +47,11 @@ public class main : MonoBehaviour
         
         GameObject gameobject2= new GameObject("check_circumsphere");
         s=gameobject2.AddComponent<check_circumsphere>(); 
-        s.in_or_out(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4,test_x, test_y, test_z);           
+        s.in_or_out(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4,test_x, test_y, test_z);    
+
+        GameObject gameobject3= new GameObject("grand_tetrahedron");
+        p=gameobject3.AddComponent<grand_tetrahedron>(); 
+        p.form_grand(vertices);         
     }
 
     // Update is called once per frame
